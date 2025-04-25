@@ -1,0 +1,5 @@
+[client]
+database = "nba"
+user = "nbauser"
+password = ""
+default-character-set = utf8mb4

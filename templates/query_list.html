@@ -1,0 +1,13 @@
+{% extends "index.html" %}
+
+{% block content %}
+{% for f in files %}
+    {% for innerf in f %}
+        {% if forloop.first %}
+            <h2>{{ innerf }}</h2>
+        {% else %}
+            <p><a href="/sql/{{ f.0 }}/{{ innerf }}">{{ innerf }}</a></p>
+        {% endif %}
+    {% endfor %}
+{% endfor %}
+{% endblock %}

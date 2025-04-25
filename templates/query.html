@@ -1,0 +1,9 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <p><a href="/">back</a></p>
+<h1>{{ filename }}</h1>
+    {% for q in query %}
+        <p>{{ q }}</p>
+    {% endfor %}
+{% endblock %}
