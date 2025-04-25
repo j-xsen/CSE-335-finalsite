@@ -1,4 +1,4 @@
-CREATE VIEW conference_standings AS
+CREATE OR REPLACE VIEW conference_standings AS
 SELECT
     wlv.season_id,
     wlv.end_year,
@@ -11,7 +11,7 @@ SELECT
     c.name AS conference_name,
     RANK() OVER (PARTITION BY wlv.season_id, fc.conference_id ORDER BY (wlv.wins / (wlv.wins + wlv.losses)) DESC) AS `rank`
 FROM
-    win_loss_view wlv
+    win_loss_viewteam_schedule_view wlv
 JOIN
     teams t ON wlv.team_name = t.name
 JOIN
